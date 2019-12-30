@@ -16,6 +16,19 @@ public class App {
         shell.setText("Snippet 48");
         shell.setLayout(new FillLayout());
 
+        Menu bar = new Menu (shell, SWT.BAR);
+        shell.setMenuBar (bar);
+        MenuItem fileItem = new MenuItem (bar, SWT.CASCADE);
+        fileItem.setText ("&File");
+        MenuItem helpItem = new MenuItem (bar, SWT.CASCADE);
+        helpItem.setText ("&Help");
+        Menu submenu = new Menu (shell, SWT.DROP_DOWN);
+        fileItem.setMenu (submenu);
+        MenuItem item = new MenuItem (submenu, SWT.PUSH);
+        item.addListener (SWT.Selection, e -> System.out.println ("Select All"));
+        item.setText ("Select &All\tCtrl+A");
+        item.setAccelerator (SWT.MOD1 + 'A');
+
         Image originalImage = null;
         FileDialog dialog = new FileDialog(shell, SWT.OPEN);
         dialog.setText("Open an image file or cancel");
@@ -91,7 +104,7 @@ public class App {
         });
 
         Rectangle rect = image.getBounds();
-        shell.setSize(Math.max(200, rect.width - 100), Math.max(150, rect.height - 100));
+        shell.setSize(1024, 780);
         shell.open();
         while (!shell.isDisposed()) {
             if (!display.readAndDispatch()) display.sleep();
