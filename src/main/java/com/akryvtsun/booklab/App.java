@@ -15,6 +15,7 @@ public class App {
         Shell shell = new Shell(display);
         shell.setText("Snippet 48");
         shell.setLayout(new FillLayout());
+
         Image originalImage = null;
         FileDialog dialog = new FileDialog(shell, SWT.OPEN);
         dialog.setText("Open an image file or cancel");
@@ -32,6 +33,7 @@ public class App {
             gc.drawText("Default Image", 10, 10);
             gc.dispose();
         }
+
         final Image image = originalImage;
         final Point origin = new Point(0, 0);
         final Canvas canvas = new Canvas(shell, SWT.NO_BACKGROUND |
@@ -87,6 +89,7 @@ public class App {
                 gc.fillRectangle(0, rect.height, client.width, marginHeight);
             }
         });
+
         Rectangle rect = image.getBounds();
         shell.setSize(Math.max(200, rect.width - 100), Math.max(150, rect.height - 100));
         shell.open();
