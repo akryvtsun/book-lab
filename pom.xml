@@ -101,11 +101,11 @@
       </properties>
     </profile>
 
-    <!--profile>
+    <profile>
       <id>linux64</id>
-      <activation-->
+      <activation>
         <!-- OS name: "linux", version: "3.13.0-62-generic", arch: "amd64", family: "unix" -->
-        <!--os>
+        <os>
           <name>linux</name>
         </os>
       </activation>
@@ -113,6 +113,6 @@
         <swt.artifactId>swt-gtk-linux-x86_64</swt.artifactId>
         <platformId>linux64</platformId>
       </properties>
-    </profile-->
+    </profile>
   </profiles>
 </project>
