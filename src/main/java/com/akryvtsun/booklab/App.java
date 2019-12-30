@@ -102,7 +102,6 @@ public class App {
                 }
             });
 
-
         });
         new MenuItem(submenu, SWT.SEPARATOR);
         item = new MenuItem(submenu, SWT.PUSH);
@@ -122,7 +121,8 @@ public class App {
         shell.setSize(1024, 780);
         shell.open();
         while (!shell.isDisposed()) {
-            if (!display.readAndDispatch()) display.sleep();
+            if (!display.readAndDispatch())
+                display.sleep();
         }
 
 //        originalImage.dispose();
