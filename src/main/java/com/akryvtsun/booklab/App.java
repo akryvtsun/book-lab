@@ -18,16 +18,24 @@ public class App {
 
         Menu bar = new Menu (shell, SWT.BAR);
         shell.setMenuBar (bar);
+
         MenuItem fileItem = new MenuItem (bar, SWT.CASCADE);
         fileItem.setText ("&File");
-        MenuItem helpItem = new MenuItem (bar, SWT.CASCADE);
-        helpItem.setText ("&Help");
         Menu submenu = new Menu (shell, SWT.DROP_DOWN);
         fileItem.setMenu (submenu);
         MenuItem item = new MenuItem (submenu, SWT.PUSH);
-        item.addListener (SWT.Selection, e -> System.out.println ("Select All"));
-        item.setText ("Select &All\tCtrl+A");
+        item.setText ("E&xit");
         item.setAccelerator (SWT.MOD1 + 'A');
+        item.addListener (SWT.Selection, e -> shell.dispose());
+
+        MenuItem helpItem = new MenuItem (bar, SWT.CASCADE);
+        helpItem.setText ("&Help");
+        submenu = new Menu (shell, SWT.DROP_DOWN);
+        helpItem.setMenu (submenu);
+        item = new MenuItem (submenu, SWT.PUSH);
+        item.setText ("&About");
+        item.setAccelerator (SWT.MOD1 + 'A');
+        item.addListener (SWT.Selection, e -> System.out.println ("About"));
 
         Image originalImage = null;
         FileDialog dialog = new FileDialog(shell, SWT.OPEN);
