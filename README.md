@@ -12,4 +12,4 @@
 - download the latest SWT release for needed platform
 - put zip file into the project root folder
 - call 
-> mvnw org.apache.maven.plugins:maven-install-plugin:3.0.0-M1:install-file -Dfile=swt-4.14-win32-win32-x86_64.zip -DgroupId=org.eclipse.swt -DartifactId=swt-win32-win32-x86_64.zip -Dversion=4.14 -Dpackaging=jar -DlocalRepositoryPath=lib
+> mvn install:install-file -Dfile=swt.jar -DgroupId=org.eclipse.swt -DartifactId=swt-win32-win32-x86_64 -Dversion=4.14 -Dpackaging=jar -DlocalRepositoryPath=C:\Home\Projects\book-lab\lib
