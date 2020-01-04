@@ -118,7 +118,7 @@ public class App {
         item.setAccelerator(SWT.MOD1 + 'A');
         item.addListener(SWT.Selection, e -> System.out.println("About"));
 
-        shell.setSize(1024, 780);
+        shell.setSize(800, 600);
         shell.open();
         while (!shell.isDisposed()) {
             if (!display.readAndDispatch())
